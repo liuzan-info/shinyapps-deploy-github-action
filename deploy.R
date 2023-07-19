@@ -57,6 +57,9 @@ cat("checking account info...")
 rsconnect::setAccountInfo(accountName, accountToken, accountSecret)
 cat(" [OK]\n")
 
+# set up Repositories
+setRepositories(ind = c(1,2,3,4,5))
+
 # deploy application
 rsconnect::deployApp(
   appDir = appDir,
