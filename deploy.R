@@ -9,14 +9,14 @@ if (!require("BiocManager", quietly = TRUE)){install.packages("BiocManager")}
 
 BiocManager::install(c("pcaMethods", "impute"))
 
-install.packages(c("shiny","shinyjs","shinyBS","shinyWidgets","ggplot2","ggrepel","plotly", "colourpicker","ggseqlogo","pheatmap","survminer","survival","zip","stringr","dplyr","DT","png", "svglite","ggplotify","bslib","qpdf", "rrcovNA", "e1071"))
+install.packages(c("shiny","shinyjs","shinyBS","shinyWidgets","ggplot2","ggrepel","plotly", "colourpicker","ggseqlogo","pheatmap","survminer","survival","zip","stringr","dplyr","DT","png", "svglite","ggplotify","bslib","qpdf", "rrcovNA", "e1071", "heatmaply"))
 
 install.packages('devtools')
 require(devtools)
 
-install_github('evocellnet/ksea')
-install_github('omarwagih/rmotifx')
-install_github('ecnuzdd/PhosMap')
+install_github('evocellnet/ksea', force = TRUE)
+install_github('omarwagih/rmotifx', force = TRUE)
+install_github('ecnuzdd/PhosMap', force = TRUE)
 
 # use renv to detect and install required packages.
 if (file.exists("renv.lock")) {
