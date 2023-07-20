@@ -1,6 +1,9 @@
 .libPaths("/usr/local/lib/R/site-library")
 cat("loading packages from:", paste("\n - ", .libPaths(), collapse = ""), "\n\n")
 
+# set up Repositories
+setRepositories(ind = c(1,2,3,4,5))
+
 # use renv to detect and install required packages.
 if (file.exists("renv.lock")) {
   renv::restore(prompt = FALSE)
@@ -56,9 +59,6 @@ if (!is.null(appFiles)) {
 cat("checking account info...")
 rsconnect::setAccountInfo(accountName, accountToken, accountSecret)
 cat(" [OK]\n")
-
-# set up Repositories
-setRepositories(ind = c(1,2,3,4,5))
 
 # deploy application
 rsconnect::deployApp(
