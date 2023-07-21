@@ -77,6 +77,10 @@ cat("checking account info...")
 rsconnect::setAccountInfo(accountName, accountToken, accountSecret)
 cat(" [OK]\n")
 
+# terminate, archive and purge existing app
+rsconnect::terminateApp(appName = appName)
+rsconnect::purgeApp(appName = appName)
+
 # deploy application
 rsconnect::deployApp(
   appDir = appDir,
@@ -84,6 +88,5 @@ rsconnect::deployApp(
   appFileManifest = appFileManifest,
   appName = appName,
   appTitle = appTitle,
-  account = accountName,
-  forceUpdate = TRUE
+  account = accountName
 )
